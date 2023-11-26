@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ftQ-jf-6II">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ftQ-jf-6II">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,13 +13,36 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="kichimon" customModuleProvider="target" sceneMemberID="viewController">
-                    <arView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Jba-dr-kES">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arView>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByL-hx-d6b">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                            </arView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fua-hz-yJA">
+                                <rect key="frame" x="176.5" y="490.5" width="61" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" 撮影"/>
+                                <connections>
+                                    <action selector="shotButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b9B-At-eRv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E5e-oY-zXT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ByL-hx-d6b" firstAttribute="top" secondItem="E5e-oY-zXT" secondAttribute="top" id="CVH-TS-EIg"/>
+                            <constraint firstItem="E5e-oY-zXT" firstAttribute="trailing" secondItem="ByL-hx-d6b" secondAttribute="trailing" id="azH-i1-0Yk"/>
+                            <constraint firstItem="ByL-hx-d6b" firstAttribute="leading" secondItem="E5e-oY-zXT" secondAttribute="leading" id="dGr-aH-PlN"/>
+                            <constraint firstItem="fua-hz-yJA" firstAttribute="centerX" secondItem="Jba-dr-kES" secondAttribute="centerX" id="oJw-WR-Up4"/>
+                            <constraint firstItem="fua-hz-yJA" firstAttribute="centerY" secondItem="Jba-dr-kES" secondAttribute="centerY" constant="60" id="pRw-10-nc7"/>
+                            <constraint firstItem="E5e-oY-zXT" firstAttribute="bottom" secondItem="ByL-hx-d6b" secondAttribute="bottom" id="slC-wq-BTF"/>
+                        </constraints>
+                    </view>
                     <tabBarItem key="tabBarItem" title="Item" image="arkit" catalog="system" id="JmC-6W-BG3"/>
                     <connections>
-                        <outlet property="arView" destination="8bC-Xf-vdC" id="TPV-4x-avp"/>
+                        <outlet property="arView" destination="ByL-hx-d6b" id="6nN-Eb-lbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -31,6 +55,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ftQ-jf-6II" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lcb-7t-rCE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

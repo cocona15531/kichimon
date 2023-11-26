@@ -23,5 +23,8 @@ class ViewController: UIViewController {
     }
     
     //2023/07/28
+    @IBAction func shotButton(_ sender: Any) {
+        print("shot")
+    }
     
 }
