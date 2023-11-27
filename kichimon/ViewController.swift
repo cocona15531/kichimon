@@ -24,7 +24,12 @@ class ViewController: UIViewController {
     
     //2023/07/28
     @IBAction func shotButton(_ sender: Any) {
-        print("shot")
+        arView.snapshot(saveToHDR: false, completion: { image in
+            UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        })
     }
+    
+//    func shot() {
+//    }
     
 }
